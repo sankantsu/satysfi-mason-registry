@@ -1,0 +1,20 @@
+---
+name: satysfi-language-server
+description: SATySFi Language Server
+homepage: https://github.com/monaqa/satysfi-language-server
+licenses:
+  - MIT License
+languages:
+  - satysfi
+categories:
+  - LSP
+
+source:
+  id: pkg:github/monaqa/satysfi-language-server@master
+  build:
+    run: |
+      cargo build
+    bin: target/debug/satysfi-language-server
+
+bin:
+  satysfi-language-server: "{{source.build.bin}}"
